@@ -7,11 +7,22 @@ $("input").keypress(function (event) {
 
 let str="";
 
-$(document).keydown(function(event){
+$(document).keypress(function(event){
     str+= event.key
     console.log(str)
     $("h1").text(str)
-    if(event.key === 'BackSpace'){
-        alert("Test")
-    }
 })
+
+$(document).keydown(function(event){
+
+if(event.which == 8){
+    str="";
+    $('h1').text(str)
+}
+
+})
+
+$("h1").on("mouseover",function(){
+    $("h1").css("color","green")
+})
+
